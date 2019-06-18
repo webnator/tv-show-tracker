@@ -7,10 +7,15 @@ import { TvShow } from './tv-show';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tv-show-tracker';
+
   public serie: TvShow = {
     nombre: 'Breaking Bad',
     temporadas: 5,
     episodios: 62
+  }
+
+
+  public modificarSerie(nombre: string): void {
+    this.serie.nombre = nombre;
   }
 }
