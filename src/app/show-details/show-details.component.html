@@ -2,5 +2,5 @@
   <p><span>Nombre:</span> {{ serie.nombre | uppercase }}</p>
   <p><span>Temporadas:</span> {{ serie.temporadas }}</p>
   <p><span>Episodios:</span> {{ serie.episodios }}</p>
-  <p><span>Rate:</span> {{ serie.rate | stars }}</p>
+  <p *ngIf="serie.rate"><span>Rate:</span> {{ serie.rate | stars }}</p>
 </div>
