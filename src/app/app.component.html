@@ -1,11 +1,11 @@
 
 <h2>Mis series</h2>
 
-<app-show-details [serie]="serie"></app-show-details>
+<app-show-details [serie]="series[0]"></app-show-details>
 
 <div>
   <h4>Modificar serie</h4>
-  <p>Nombre: <input type="text" [(ngModel)]="serie.nombre" /></p>
-  <p>Temporadas: <input type="text" [(ngModel)]="serie.temporadas" /></p>
-  <p>Episodios: <input type="text" [(ngModel)]="serie.episodios" /></p>
+  <p>Nombre: <input type="text" [(ngModel)]="series[0].nombre" /></p>
+  <p>Temporadas: <input type="text" [(ngModel)]="series[0].temporadas" /></p>
+  <p>Episodios: <input type="text" [(ngModel)]="series[0].episodios" /></p>
 </div>
