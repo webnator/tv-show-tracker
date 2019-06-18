@@ -11,16 +11,17 @@ export class AppComponent {
 
   public series: Array<TvShow>;
 
-  constructor(showService: ShowServiceService) {
+  constructor(private showService: ShowServiceService) {
     this.series = showService.obtenerSeries();
   }
 
 
-  public modificarSerie(nombre: string, temporadas: number, episodios: number): void {
-    this.series[0] = {
+  public agregarSerie(nombre: string, temporadas: number, episodios: number, rate?: number): void {
+    this.showService.agregarSerie({
       nombre,
       temporadas,
-      episodios
-    };
+      episodios,
+      rate
+    });
   }
 }
