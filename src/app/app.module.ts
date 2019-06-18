@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
+import { StarsPipe } from './stars.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
+    StarsPipe
   ],
   imports: [
     BrowserModule,
