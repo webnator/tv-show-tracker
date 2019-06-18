@@ -10,5 +10,7 @@
 <div>
   <h4>Modificar serie</h4>
   <p>Nombre: <input type="text" #nombreSerie/></p>
-  <button (click)="modificarSerie(nombreSerie.value)">Modificar</button>
+  <p>Temporadas: <input type="text" #temporadasSerie/></p>
+  <p>Episodios: <input type="text" #episodiosSerie/></p>
+  <button (click)="modificarSerie(nombreSerie.value, temporadasSerie.value, episodiosSerie.value)">Modificar</button>
 </div>

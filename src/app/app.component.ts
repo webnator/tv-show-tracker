@@ -15,7 +15,11 @@ export class AppComponent {
   }
 
 
-  public modificarSerie(nombre: string): void {
-    this.serie.nombre = nombre;
+  public modificarSerie(nombre: string, temporadas: number, episodios: number): void {
+    this.serie = {
+      nombre,
+      temporadas,
+      episodios
+    };
   }
 }
