@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TvShow } from '../tv-show';
 
 @Component({
@@ -8,11 +8,7 @@ import { TvShow } from '../tv-show';
 })
 export class ShowDetailsComponent implements OnInit {
 
-  public serie: TvShow = {
-    nombre: 'Breaking Bad',
-    temporadas: 5,
-    episodios: 62
-  }
+  @Input() serie: TvShow;
 
   constructor() { }
 
