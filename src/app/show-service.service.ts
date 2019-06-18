@@ -12,11 +12,13 @@ export class ShowServiceService {
     return [{
       nombre: 'Breaking Bad',
       temporadas: 5,
-      episodios: 62
+      episodios: 62,
+      rate: 5
     }, {
       nombre: 'Game of Thrones',
       temporadas: 8,
-      episodios: 73
+      episodios: 73,
+      rate: 4
     }, {
       nombre: 'Lucifer',
       temporadas: 4,
