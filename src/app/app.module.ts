@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { StarsPipe } from './stars.pipe';
+import { OrdenarSeriesPipe } from './ordenar-series.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowDetailsComponent,
-    StarsPipe
+    StarsPipe,
+    OrdenarSeriesPipe
   ],
   imports: [
     BrowserModule,
