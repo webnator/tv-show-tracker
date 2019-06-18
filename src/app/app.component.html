@@ -9,8 +9,7 @@
 
 <div>
   <h4>Modificar serie</h4>
-  <p>Nombre: <input type="text" #nombreSerie/></p>
-  <p>Temporadas: <input type="text" #temporadasSerie/></p>
-  <p>Episodios: <input type="text" #episodiosSerie/></p>
-  <button (click)="modificarSerie(nombreSerie.value, temporadasSerie.value, episodiosSerie.value)">Modificar</button>
+  <p>Nombre: <input type="text" [(ngModel)]="serie.nombre" /></p>
+  <p>Temporadas: <input type="text" [(ngModel)]="serie.temporadas" /></p>
+  <p>Episodios: <input type="text" [(ngModel)]="serie.episodios" /></p>
 </div>
