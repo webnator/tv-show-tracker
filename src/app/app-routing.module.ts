@@ -5,7 +5,8 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'agregar-serie', component: AddShowComponent }
+  { path: 'agregar-serie', component: AddShowComponent },
+  { path: '**', component: MainComponent }
 ];
 
 @NgModule({
