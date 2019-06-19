@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { StarsPipe } from './stars.pipe';
 import { OrdenarSeriesPipe } from './ordenar-series.pipe';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowDetailsComponent,
     StarsPipe,
-    OrdenarSeriesPipe
+    OrdenarSeriesPipe,
+    MainComponent
   ],
   imports: [
     BrowserModule,
