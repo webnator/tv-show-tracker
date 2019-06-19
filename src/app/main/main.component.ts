@@ -17,13 +17,4 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public agregarSerie(nombre: string, temporadas: number, episodios: number, rate?: number): void {
-    this.showService.agregarSerie({
-      nombre,
-      temporadas,
-      episodios,
-      rate
-    });
-  }
 }

@@ -1,3 +1,8 @@
-<p>
-  add-show works!
-</p>
+<div>
+  <h4>Agregar serie</h4>
+  <p>Nombre: <input type="text" #serieNombre /></p>
+  <p>Temporadas: <input type="text" #serieTemporadas /></p>
+  <p>Episodios: <input type="text" #serieEpisodios /></p>
+  <p>Rating: <input type="text" #serieRating /></p>
+  <button (click)="agregarSerie(serieNombre.value, serieTemporadas.value, serieEpisodios.value, serieRating.value)">Añadir</button>
+</div>

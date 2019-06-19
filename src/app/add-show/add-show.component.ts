@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShowServiceService } from '../show-service.service';
 
 @Component({
   selector: 'app-add-show',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddShowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private showService: ShowServiceService) { }
 
   ngOnInit() {
+  }
+
+  public agregarSerie(nombre: string, temporadas: number, episodios: number, rate?: number): void {
+    this.showService.agregarSerie({
+      nombre,
+      temporadas,
+      episodios,
+      rate
+    });
   }
 
 }
