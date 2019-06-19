@@ -1,4 +1,5 @@
 <div>
+  
   <h2>{{ serie.nombre }}</h2>
   <div>
     {{ serie.temporadas }} temporadas 
@@ -9,4 +10,7 @@
   <div *ngIf="serie.rate">{{ serie.rate | stars }}</div>
 
   Descripcion de la serie
+
+  <hr>
+  <a (click)="volver()">Volver</a>
 </div>
