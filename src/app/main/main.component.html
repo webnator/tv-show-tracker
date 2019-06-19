@@ -1,4 +1,6 @@
 
 <h2>Mis series</h2>
 
-<app-show-details *ngFor="let serie of (series | ordenarSeries)" [serie]="serie" routerLink="/detalle-serie"></app-show-details>
+<app-show-details *ngFor="let serie of (series | ordenarSeries); let i = index" 
+  [serie]="serie" 
+  [routerLink]="['/detalle-serie', i]"></app-show-details>
