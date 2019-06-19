@@ -9,9 +9,9 @@ import { TvShow } from '../tv-show';
 })
 export class TvShowDetailsComponent implements OnInit {
   public serie: TvShow;
-  
+
   constructor(private showService: ShowServiceService) {
-    this.serie = showService.obtenerSeries()[0];
+    this.serie = showService.obtenerSerie(0);
   }
 
   ngOnInit() {

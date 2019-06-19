@@ -28,6 +28,10 @@ export class ShowServiceService {
     return this.series;
   }
 
+  public obtenerSerie(indice: number): TvShow {
+    return this.series[indice];
+  }
+
   public agregarSerie(serie: TvShow) {
     this.series.push(serie);
   }
