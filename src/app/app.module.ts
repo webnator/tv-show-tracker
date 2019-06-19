@@ -8,6 +8,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { StarsPipe } from './stars.pipe';
 import { OrdenarSeriesPipe } from './ordenar-series.pipe';
 import { MainComponent } from './main/main.component';
+import { AddShowComponent } from './add-show/add-show.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MainComponent } from './main/main.component';
     ShowDetailsComponent,
     StarsPipe,
     OrdenarSeriesPipe,
-    MainComponent
+    MainComponent,
+    AddShowComponent
   ],
   imports: [
     BrowserModule,
