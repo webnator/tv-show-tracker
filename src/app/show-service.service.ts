@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { TvShow } from './tv-show';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShowServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   private series: Array<TvShow> = [{
     nombre: 'Breaking Bad',
@@ -47,6 +48,20 @@ export class ShowServiceService {
 
   public obtenerSerie(indice: number): TvShow {
     return this.series[indice];
+  }
+
+  public obtenerSerieAPI(indice: number): Observable<any> {
+    const serie = this.series[indice];
+    return this.http.get('https://api.themoviedb.org/3/search/tv/', {
+      headers: {
+        'Access-Control-Allow-Origin': 'null'
+      },
+      params: {
+        api_key: 'f806d8716f5bd880ed8aac0a5e1a4d79',
+        language: 'es-ES',
+        query: serie.nombre
+      }
+    });
   }
 
   public agregarSerie(serie: TvShow) {

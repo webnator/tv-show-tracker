@@ -17,6 +17,10 @@ export class TvShowDetailsComponent implements OnInit {
   ngOnInit() {
     const indice = this.route.snapshot.paramMap.get('indice');
     this.serie = this.showService.obtenerSerie(parseInt(indice));
+
+    this.showService.obtenerSerieAPI(parseInt(indice)).subscribe({
+      next: (serie) => console.log(serie)
+    })
   }
 
   public volver(): void {
