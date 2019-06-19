@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TvShow } from './tv-show';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,22 @@ export class ShowServiceService {
 
   public obtenerSeries(): Array<TvShow> {
     return this.series;
+  }
+
+  public obtenerSeriesConRetraso(): Observable<TvShow> {
+    return new Observable((observer) => {
+      let index = 0;
+      const int = setInterval(() => {
+        if (this.series[index]) {
+          observer.next(this.series[index]);
+          index += 1;
+        } else {
+          observer.complete();
+          clearInterval(int);
+        }
+      }, 1000);
+      return { unsubscribe() { } };
+    });
   }
 
   public obtenerSerie(indice: number): TvShow {
