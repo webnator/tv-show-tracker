@@ -7,7 +7,7 @@ import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.compon
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'agregar-serie', component: AddShowComponent },
-  { path: 'detalle-serie', component: TvShowDetailsComponent },
+  { path: 'detalle-serie/:indice', component: TvShowDetailsComponent },
   { path: '**', component: MainComponent }
 ];
 
