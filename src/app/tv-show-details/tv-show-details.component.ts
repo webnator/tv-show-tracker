@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShowServiceService } from '../show-service.service';
+import { TvShow } from '../tv-show';
 
 @Component({
   selector: 'app-tv-show-details',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tv-show-details.component.sass']
 })
 export class TvShowDetailsComponent implements OnInit {
-
-  constructor() { }
+  public serie: TvShow;
+  
+  constructor(private showService: ShowServiceService) {
+    this.serie = showService.obtenerSeries()[0];
+  }
 
   ngOnInit() {
   }

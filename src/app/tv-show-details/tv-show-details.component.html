@@ -1,3 +1,12 @@
-<p>
-  tv-show-details works!
-</p>
+<div>
+  <h2>{{ serie.nombre }}</h2>
+  <div>
+    {{ serie.temporadas }} temporadas 
+  </div>
+  <div>
+    {{ serie.episodios }} episodios
+  </div>
+  <div *ngIf="serie.rate">{{ serie.rate | stars }}</div>
+
+  Descripcion de la serie
+</div>
