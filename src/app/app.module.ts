@@ -9,6 +9,7 @@ import { StarsPipe } from './stars.pipe';
 import { OrdenarSeriesPipe } from './ordenar-series.pipe';
 import { MainComponent } from './main/main.component';
 import { AddShowComponent } from './add-show/add-show.component';
+import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddShowComponent } from './add-show/add-show.component';
     StarsPipe,
     OrdenarSeriesPipe,
     MainComponent,
-    AddShowComponent
+    AddShowComponent,
+    TvShowDetailsComponent
   ],
   imports: [
     BrowserModule,
