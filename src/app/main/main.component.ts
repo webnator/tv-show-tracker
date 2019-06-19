@@ -12,7 +12,11 @@ export class MainComponent implements OnInit {
   public series: Array<TvShow>;
 
   constructor(private showService: ShowServiceService) {
-    this.series = showService.obtenerSeries();
+    this.series = [];
+    showService.obtenerSeriesConRetraso().subscribe({
+      next: (serie: TvShow) => this.series.push(serie),
+      complete: () => console.log('completed')
+    })
   }
 
   ngOnInit() {
