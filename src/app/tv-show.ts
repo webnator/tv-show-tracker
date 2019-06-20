@@ -3,4 +3,5 @@ export class TvShow {
   temporadas: number
   episodios: number
   rate?: number
+  id?: number
 }

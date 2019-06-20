@@ -14,16 +14,19 @@ export class ShowServiceService {
     nombre: 'Breaking Bad',
     temporadas: 5,
     episodios: 62,
-    rate: 5
+    rate: 5,
+    id: 1396
   }, {
     nombre: 'Game of Thrones',
     temporadas: 8,
     episodios: 73,
-    rate: 4
+    rate: 4,
+    id: 1399
   }, {
     nombre: 'Lucifer',
     temporadas: 4,
-    episodios: 67
+    episodios: 67,
+    id: 63174
   }]
 
   public obtenerSeries(): Array<TvShow> {
@@ -52,14 +55,10 @@ export class ShowServiceService {
 
   public obtenerSerieAPI(indice: number): Observable<any> {
     const serie = this.series[indice];
-    return this.http.get('https://api.themoviedb.org/3/search/tv/', {
-      headers: {
-        'Access-Control-Allow-Origin': 'null'
-      },
+    return this.http.get(`http://api.themoviedb.org/3/tv/${serie.id}`, {
       params: {
         api_key: 'f806d8716f5bd880ed8aac0a5e1a4d79',
-        language: 'es-ES',
-        query: serie.nombre
+        language: 'es-ES'
       }
     });
   }

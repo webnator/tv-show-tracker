@@ -16,10 +16,15 @@ export class TvShowDetailsComponent implements OnInit {
 
   ngOnInit() {
     const indice = this.route.snapshot.paramMap.get('indice');
-    this.serie = this.showService.obtenerSerie(parseInt(indice));
-
     this.showService.obtenerSerieAPI(parseInt(indice)).subscribe({
-      next: (serie) => console.log(serie)
+      next: (serieAPI) => {
+        this.serie = {
+          nombre: serieAPI.name,
+          episodios: serieAPI.number_of_episodes,
+          temporadas: serieAPI.number_of_seasons,
+          rate: serieAPI.vote_average / 2
+        }
+      }
     })
   }
 
