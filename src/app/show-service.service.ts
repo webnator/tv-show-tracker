@@ -41,8 +41,8 @@ export class ShowServiceService {
   }
 
   public obtenerSerieAPI(indice: number): Observable<any> {
-    const serie = this.series[indice];
-    return this.http.get(`http://api.themoviedb.org/3/tv/${serie.id}`, {
+    const id: number = this.idSeries[indice];
+    return this.http.get(`http://api.themoviedb.org/3/tv/${id}`, {
       params: {
         api_key: 'f806d8716f5bd880ed8aac0a5e1a4d79',
         language: 'es-ES'
