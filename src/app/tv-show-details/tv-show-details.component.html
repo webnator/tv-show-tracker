@@ -1,8 +1,11 @@
-<div>
-  
+<div *ngIf="!serie">
+  Cargando...
+</div>
+<div *ngIf="serie">
+
   <h2>{{ serie.nombre }}</h2>
   <div>
-    {{ serie.temporadas }} temporadas 
+    {{ serie.temporadas }} temporadas
   </div>
   <div>
     {{ serie.episodios }} episodios
