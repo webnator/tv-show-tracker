@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
 
   constructor(private showService: ShowServiceService) {
     this.series = [];
-    showService.obtenerSeriesConRetraso().subscribe({
+    showService.obtenerSeriesAPI().subscribe({
       next: (serie: TvShow) => this.series.push(serie),
       complete: () => console.log('completed')
     })

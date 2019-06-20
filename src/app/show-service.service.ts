@@ -10,47 +10,34 @@ export class ShowServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private series: Array<TvShow> = [{
-    nombre: 'Breaking Bad',
-    temporadas: 5,
-    episodios: 62,
-    rate: 5,
-    id: 1396
-  }, {
-    nombre: 'Game of Thrones',
-    temporadas: 8,
-    episodios: 73,
-    rate: 4,
-    id: 1399
-  }, {
-    nombre: 'Lucifer',
-    temporadas: 4,
-    episodios: 67,
-    id: 63174
-  }]
+  private idSeries: Array<number> = [ 1396, 1399, 63174 ];
 
-  public obtenerSeries(): Array<TvShow> {
-    return this.series;
-  }
+  private series: Array<TvShow> = [];
 
-  public obtenerSeriesConRetraso(): Observable<TvShow> {
+  public obtenerSeriesAPI(): Observable<TvShow> {
     return new Observable((observer) => {
-      let index = 0;
-      const int = setInterval(() => {
-        if (this.series[index]) {
-          observer.next(this.series[index]);
-          index += 1;
-        } else {
-          observer.complete();
-          clearInterval(int);
-        }
-      }, 1000);
+      for (const id of this.idSeries) {
+        this.http.get(`http://api.themoviedb.org/3/tv/${id}`, {
+          params: {
+            api_key: 'f806d8716f5bd880ed8aac0a5e1a4d79',
+            language: 'es-ES'
+          }
+        }).subscribe({
+          next: (serieAPI: any) => {
+            const serie: TvShow = {
+              nombre: serieAPI.name,
+              episodios: serieAPI.number_of_episodes,
+              temporadas: serieAPI.number_of_seasons,
+              rate: serieAPI.vote_average / 2,
+              id: serieAPI.id
+            }
+            this.series.push(serie);
+            observer.next(serie);
+          }
+        })
+      }
       return { unsubscribe() { } };
     });
-  }
-
-  public obtenerSerie(indice: number): TvShow {
-    return this.series[indice];
   }
 
   public obtenerSerieAPI(indice: number): Observable<any> {
