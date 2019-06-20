@@ -24,7 +24,8 @@ export class ShowServiceService {
               episodios: serieAPI.number_of_episodes,
               temporadas: serieAPI.number_of_seasons,
               rate: serieAPI.vote_average / 2,
-              id: serieAPI.id
+              id: serieAPI.id,
+              descripcion: serieAPI.overview
             }
             this.series.push(serie);
             observer.next(serie);

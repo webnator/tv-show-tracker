@@ -22,7 +22,8 @@ export class TvShowDetailsComponent implements OnInit {
           nombre: serieAPI.name,
           episodios: serieAPI.number_of_episodes,
           temporadas: serieAPI.number_of_seasons,
-          rate: serieAPI.vote_average / 2
+          rate: serieAPI.vote_average / 2,
+          descripcion: serieAPI.overview
         }
       }
     })
