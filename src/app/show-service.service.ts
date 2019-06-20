@@ -50,7 +50,7 @@ export class ShowServiceService {
     });
   }
 
-  public agregarSerie(serie: TvShow) {
-    this.series.push(serie);
+  public agregarSerie(idSerie: number) {
+    this.idSeries.push(idSerie);
   }
 }

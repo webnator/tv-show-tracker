@@ -13,13 +13,8 @@ export class AddShowComponent implements OnInit {
   ngOnInit() {
   }
 
-  public agregarSerie(nombre: string, temporadas: number, episodios: number, rate?: number): void {
-    this.showService.agregarSerie({
-      nombre,
-      temporadas,
-      episodios,
-      rate
-    });
+  public agregarSerie(id: number): void {
+    this.showService.agregarSerie(id);
   }
 
 }
